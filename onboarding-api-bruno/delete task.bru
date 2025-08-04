@@ -1,24 +1,17 @@
 meta {
-  name: login
+  name: delete task
   type: http
-  seq: 1
+  seq: 8
 }
 
-post {
-  url: http://localhost:3000/auth/login
+delete {
+  url: http://localhost:3000/tasks/1
   body: json
   auth: bearer
 }
 
 auth:bearer {
   token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlciIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNzU0Mjk2MDg5LCJleHAiOjE3NTQyOTk2ODl9.ZgUHpQNsZzH9zDSbP0u14gKOsoaIdZDS4y-v0qtf9s0
-}
-
-body:json {
-  {
-    "username": "user",
-    "password": "user"
-  }
 }
 
 settings {

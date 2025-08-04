@@ -7,7 +7,11 @@ meta {
 post {
   url: http://localhost:3000/tasks/email
   body: json
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidGVzdCIsImlhdCI6MTc1NDI5MTI4MiwiZXhwIjoxNzU0Mjk0ODgyfQ.l-Bh3TtlGawX8RrU_pWSKfqORdaKZTbTvGi_woGqdOA
 }
 
 body:json {

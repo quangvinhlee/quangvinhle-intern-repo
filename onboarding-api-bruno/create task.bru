@@ -1,11 +1,11 @@
 meta {
-  name: login
+  name: create task
   type: http
-  seq: 1
+  seq: 4
 }
 
 post {
-  url: http://localhost:3000/auth/login
+  url: http://localhost:3000/tasks
   body: json
   auth: bearer
 }
@@ -16,8 +16,8 @@ auth:bearer {
 
 body:json {
   {
-    "username": "user",
-    "password": "user"
+    "title": "My Task Title",
+    "description": "Optional description"
   }
 }
 
