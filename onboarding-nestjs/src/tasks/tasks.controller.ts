@@ -1,6 +1,6 @@
 import { Controller, UseGuards, Post, Body } from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('tasks')
 @UseGuards(JwtAuthGuard)
