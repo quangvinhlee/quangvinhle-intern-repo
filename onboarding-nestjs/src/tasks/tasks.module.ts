@@ -2,6 +2,7 @@
 
 import { forwardRef, Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bullmq';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TasksService } from './tasks.service';
 import { TasksProcessor } from './tasks.processor';
 
@@ -10,12 +11,16 @@ import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
   imports: [
-    BullModule.registerQueue({
+    BullModule.registerQueueAsync({
       name: 'email-queue',
-      connection: {
-        host: 'localhost',
-        port: 6379,
-      },
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        connection: {
+          host: configService.get('REDIS_HOST', 'redis'),
+          port: parseInt(configService.get('REDIS_PORT', '6379'), 10),
+        },
+      }),
+      inject: [ConfigService],
     }),
     forwardRef(() => AuthModule),
   ],
