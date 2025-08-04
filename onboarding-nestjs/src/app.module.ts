@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { InMemoryQueueModule } from './inmemory-queue/inmemory-queue.module';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
-  imports: [InMemoryQueueModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), TasksModule],
   controllers: [AppController],
   providers: [AppService],
 })
