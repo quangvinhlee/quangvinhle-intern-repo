@@ -3,13 +3,17 @@ import * as jwt from 'jsonwebtoken';
 
 @Injectable()
 export class AuthService {
-  private readonly jwtSecret = 'test-secret'; // Use env in production
+  private readonly jwtSecret = 'test-secret';
 
   // Simulate user validation
   async validateUser(username: string, password: string): Promise<any> {
     // Hardcoded user for demo
     if (username === 'test' && password === 'test') {
-      return { userId: 1, username: 'test' };
+      return { userId: 1, username: 'test', roles: ['admin'] };
+    }
+    // Add more users/roles as needed
+    if (username === 'user' && password === 'user') {
+      return { userId: 2, username: 'user', roles: ['user'] };
     }
     return null;
   }
@@ -24,6 +28,7 @@ export class AuthService {
     const access_token = this.sign({
       sub: user.userId,
       username: user.username,
+      roles: user.roles,
     });
     return { access_token };
   }
@@ -34,8 +39,11 @@ export class AuthService {
 
   verify(token: string): any {
     try {
+      console.log('Verifying token:', token);
+      console.log('Using secret:', this.jwtSecret);
       return jwt.verify(token, this.jwtSecret);
-    } catch {
+    } catch (e) {
+      console.error('JWT verification error:', e);
       return null;
     }
   }

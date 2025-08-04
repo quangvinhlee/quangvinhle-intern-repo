@@ -1,0 +1,19 @@
+meta {
+  name: get-admin
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/admin
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidGVzdCIsInJvbGVzIjpbImFkbWluIl0sImlhdCI6MTc1NDI5NDM3MSwiZXhwIjoxNzU0Mjk3OTcxfQ.y25BVdv8FYCQEpEW6XXERe3tr5MCLPn54QpwG3gjYnE
+}
+
+settings {
+  encodeUrl: true
+}
