@@ -174,4 +174,24 @@ Branching isolates work, but communication and frequent pulls from the main bran
 
 ---
 
-_Committed and pushed changes to GitHub._
+## Writing Meaningful Commit Messages
+
+### What makes a good commit message?
+
+- A good commit message is concise, clear, and describes the purpose of the change. It often follows a structure: a short summary (imperative mood), optionally followed by a more detailed explanation if needed.
+
+### How does a clear commit message help in team collaboration?
+
+- Clear messages make it easy for teammates to understand what changed and why, speeding up code reviews, debugging, and onboarding. They help track features, fixes, and context for decisions.
+
+### How can poor commit messages cause issues later?
+
+- Vague or unclear messages (e.g., "fixed stuff") make it hard to understand the history, slow down debugging, and can lead to confusion or mistakes when merging or reverting changes.
+
+### Commit Message Examples
+
+- Vague: `fixed stuff`
+- Overly detailed: `Fixed the bug in the user authentication module by changing the validation logic, updating the error messages, refactoring the login controller, and adding new tests for edge cases.`
+- Well-structured: `fix(auth): update validation logic in login controller`
+
+---
