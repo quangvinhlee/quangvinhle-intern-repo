@@ -37,3 +37,31 @@ If two developers edit the same file on different branches:
 Branching isolates work, but communication and frequent pulls from the main branch help avoid conflicts.
 
 ---
+
+This is from issue #54
+
+# Git: Staging vs Committing
+
+## What is the difference between staging and committing?
+
+- **Staging** (using `git add <file>`): Prepares changes to be included in the next commit. Staged files are tracked but not yet part of the repository history.
+- **Committing** (using `git commit`): Records the staged changes in the repository history, creating a snapshot that can be referenced or reverted.
+
+## Why does Git separate these two steps?
+
+- It allows you to review and group changes before making a permanent record. You can stage multiple files, review them, and commit them together or separately, giving you control over your commit history.
+
+## When would you want to stage changes without committing?
+
+- When you want to:
+  - Review changes before committing.
+  - Group related changes into a single commit.
+  - Stage only some changes in a file (using `git add -p`).
+  - Prepare changes for a later commit, but not ready to finalize.
+
+## Experiment Summary
+
+- Modified a file, staged it (`git add <file>`), checked status (`git status`), unstaged it (`git reset HEAD <file>`), then committed and observed the difference.
+- Staged changes are not part of history until committed.
+
+---
