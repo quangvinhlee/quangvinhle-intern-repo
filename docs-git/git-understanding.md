@@ -174,6 +174,8 @@ Branching isolates work, but communication and frequent pulls from the main bran
 
 ---
 
+#issue #59
+
 ## Writing Meaningful Commit Messages
 
 ### What makes a good commit message?
@@ -193,5 +195,49 @@ Branching isolates work, but communication and frequent pulls from the main bran
 - Vague: `fixed stuff`
 - Overly detailed: `Fixed the bug in the user authentication module by changing the validation logic, updating the error messages, refactoring the login controller, and adding new tests for edge cases.`
 - Well-structured: `fix(auth): update validation logic in login controller`
+
+---
+
+// issue #60## ✅ Reflections
+
+### 1. Why are PRs important in a team workflow?
+
+Pull Requests are essential for collaborative development because they enable team members to:
+
+- Propose code changes in a controlled way
+- Facilitate peer reviews and feedback before merging into the main codebase
+- Maintain code quality through discussions, suggestions, and review checks
+- Provide documentation and history of changes via PR comments and linked issues
+- Prevent bugs by enabling review, CI checks, and discussion before deployment
+
+PRs also foster team communication and transparency, allowing everyone to stay informed about ongoing work.
+
+---
+
+### 2. What makes a well-structured PR?
+
+A well-structured PR typically includes:
+
+- **Clear and descriptive title**: Summarizes the change briefly
+- **Detailed description**: Explains _why_ the change was made, not just _what_ changed
+- **Linked issues**: References any related GitHub issues (e.g., `Closes #42`)
+- **Small scope**: Focuses on a specific change or feature rather than multiple unrelated ones
+- **Organized commits**: Clean and meaningful commit history
+- **Passing CI checks**: Ensures all tests and checks are green before merging
+
+Bonus: Screenshots or demo gifs for UI changes, and before/after comparisons when relevant.
+
+---
+
+### 3. What did you learn from reviewing an open-source PR?
+
+I reviewed a pull request from the [React GitHub repository](https://github.com/facebook/react/pulls) and learned the following:
+
+- Review discussions often include detailed technical reasoning and proposed alternatives.
+- Even small changes (like typo fixes or performance tweaks) go through thorough review processes.
+- Core maintainers often request changes before approval, showing that peer review is an iterative process.
+- PRs frequently link to related issues, test cases, and benchmarks to justify changes.
+
+This reinforced the importance of communication, collaboration, and precision in professional open-source environments.
 
 ---
