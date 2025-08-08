@@ -65,3 +65,19 @@ This is from issue #54
 - Staged changes are not part of history until committed.
 
 ---
+
+## Merge Conflicts & Conflict Resolution
+
+### What caused the conflict?
+
+- The conflict was caused by editing the same lines in a file on two different branches (main and a feature branch). When merging, Git could not automatically decide which changes to keep.
+
+### How did you resolve it?
+
+- Used the Git desktop client (VS Code or GitHub Desktop) to view the conflict. The conflicting file showed both sets of changes, marked with conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`). I manually chose which changes to keep, removed the markers, and staged the resolved file. Then I committed the resolution.
+
+### What did you learn?
+
+- Merge conflicts happen when changes overlap in the same file and Git cannot auto-merge. Resolving conflicts requires careful review to ensure no work is lost. Tools like VS Code make it easier to see and resolve conflicts. Good communication and frequent pulls from main help avoid conflicts.
+
+---
