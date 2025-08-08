@@ -1,0 +1,25 @@
+meta {
+  name: updateUser
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:3000/users/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlciIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNzU0Mjk2MDg5LCJleHAiOjE3NTQyOTk2ODl9.ZgUHpQNsZzH9zDSbP0u14gKOsoaIdZDS4y-v0qtf9s0
+}
+
+body:json {
+  {
+    "name": "vinh"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
