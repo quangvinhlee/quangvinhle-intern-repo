@@ -32,6 +32,8 @@
     "@nestjs/throttler": "^6.4.0",
     "@nestjs/typeorm": "^11.0.0",
     "bullmq": "^5.56.9",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
     "fastify": "^5.4.0",
     "ioredis": "^5.7.0",
     "pg": "^8.16.3",

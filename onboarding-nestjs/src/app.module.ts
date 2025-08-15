@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { AdminController } from './admin/admin.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
+import { TestModule } from './test/test.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { UserModule } from './user/user.module';
     TasksModule,
     AuthModule,
     UserModule,
+    TestModule,
   ],
   controllers: [AppController, AdminController],
   providers: [AppService],

@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import {
@@ -34,6 +36,10 @@ async function bootstrap() {
     },
     credentials: true,
   });
+
+  // Global validation pipe
+  const { ValidationPipe } = await import('@nestjs/common');
+  app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(parseInt(process.env.PORT || '3000', 10), '0.0.0.0');
 }
