@@ -1,98 +1,396 @@
+# NestJS Onboarding Project
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 🎯 Project Purpose
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is a **NestJS learning and onboarding project** designed to demonstrate essential NestJS concepts and best practices. It serves as a foundational resource for developers learning NestJS framework.
 
-## Description
+**Note**: This project contains basic implementations for learning purposes. Many advanced features, production-ready implementations, and comprehensive task solutions are implemented in the main project: **[DuoTime Backend](https://github.com/quangvinhlee/DuoTime/tree/main/apps/backend)**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### What You'll Learn (Basic Level)
 
-## Project setup
+- **Authentication & Authorization**: JWT-based auth with role-based access control
+- **Database Integration**: PostgreSQL with TypeORM
+- **Queue Processing**: Redis with BullMQ for background jobs
+- **Security**: HTTP headers, rate limiting, CORS, input validation
+- **Testing**: Unit tests, E2E tests, and test coverage
+- **Containerization**: Docker and docker-compose setup
+- **Modern HTTP Server**: Fastify integration
+- **API Design**: RESTful endpoints with proper validation
 
-```bash
-$ npm install
-```
+## 🚀 Quick Start
 
-## Compile and run the project
+### Prerequisites
+
+- Node.js (v18 or higher)
+- Docker and Docker Compose
+- npm or yarn
+
+### Installation
 
 ```bash
-# development
-$ npm run start
+# Clone the repository
+git clone <repository-url>
+cd onboarding-nestjs
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Install dependencies
+npm install
 ```
 
-## Run tests
+### Running with Docker (Recommended)
 
 ```bash
-# unit tests
-$ npm run test
+# Start all services (app, PostgreSQL, Redis)
+docker-compose up -d
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# The API will be available at http://localhost:3000
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Running Locally
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Start PostgreSQL and Redis (if not using Docker)
+# You'll need to have PostgreSQL and Redis running locally
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run start:dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 🧪 Testing
 
-## Resources
+### Running Tests
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+# Unit tests
+npm run test
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+# Unit tests in watch mode
+npm run test:watch
 
-## Support
+# E2E tests
+npm run test:e2e
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# Test coverage
+npm run test:cov
 
-## Stay in touch
+# Debug tests
+npm run test:debug
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Test Structure
 
-## License
+- **Unit Tests**: Located in `*.spec.ts` files alongside source code
+- **E2E Tests**: Located in `test/` directory
+- **Coverage**: Generated in `coverage/` directory
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 📚 API Documentation
+
+### Authentication
+
+#### Login
+
+```bash
+POST /auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+```
+
+**Response:**
+
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+#### Available Users
+
+- **Admin User**: `username: test, password: test` (has admin role)
+- **Regular User**: `username: user, password: user` (has user role)
+
+### Tasks API
+
+All task endpoints require authentication. Include the JWT token in the Authorization header:
+
+```
+Authorization: Bearer <your-jwt-token>
+```
+
+#### Get All Tasks
+
+```bash
+GET /tasks
+Authorization: Bearer <jwt-token>
+```
+
+#### Get Task by ID
+
+```bash
+GET /tasks/:id
+Authorization: Bearer <jwt-token>
+```
+
+#### Create Task
+
+```bash
+POST /tasks
+Authorization: Bearer <jwt-token>
+Content-Type: application/json
+
+{
+  "title": "New Task",
+  "description": "Task description"
+}
+```
+
+#### Update Task
+
+```bash
+PUT /tasks/:id
+Authorization: Bearer <jwt-token>
+Content-Type: application/json
+
+{
+  "title": "Updated Task",
+  "description": "Updated description"
+}
+```
+
+#### Delete Task
+
+```bash
+DELETE /tasks/:id
+Authorization: Bearer <jwt-token>
+```
+
+#### Send Email (Rate Limited)
+
+```bash
+POST /tasks/email
+Authorization: Bearer <jwt-token>
+Content-Type: application/json
+
+{
+  "email": "user@example.com"
+}
+```
+
+### User Management
+
+#### Get All Users
+
+```bash
+GET /users
+Authorization: Bearer <jwt-token>
+```
+
+#### Create User
+
+```bash
+POST /users
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "email": "newuser@example.com",
+  "password": "password123"
+}
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Server Configuration
+PORT=3000
+
+# Database Configuration
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres
+
+# Redis Configuration
+REDIS_HOST=localhost
+REDIS_PORT=6379
+
+# Security Configuration
+RATE_LIMIT_MAX=10
+RATE_LIMIT_TIME_WINDOW=60000
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+
+# JWT Configuration
+JWT_SECRET=your-secret-key
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── auth/                    # Authentication & authorization
+│   ├── guards/             # JWT and role guards
+│   ├── decorators/         # Custom decorators
+│   ├── auth.controller.ts  # Auth endpoints
+│   ├── auth.service.ts     # Auth business logic
+│   └── auth.module.ts      # Auth module
+├── tasks/                  # Task management
+│   ├── tasks.controller.ts # Task endpoints
+│   ├── tasks.service.ts    # Task business logic
+│   ├── tasks.processor.ts  # Queue processor
+│   ├── task.interface.ts   # Task type definitions
+│   └── tasks.module.ts     # Tasks module
+├── user/                   # User management
+│   ├── dto/               # Data transfer objects
+│   ├── user.entity.ts     # User database entity
+│   ├── user.controller.ts # User endpoints
+│   ├── user.service.ts    # User business logic
+│   └── user.module.ts     # User module
+├── admin/                  # Admin-specific endpoints
+├── test/                   # Test module
+├── app.module.ts          # Root module
+├── main.ts                # Application bootstrap
+└── data-source.ts         # Database configuration
+```
+
+## 🔒 Security Features
+
+- **Helmet**: HTTP security headers
+- **Rate Limiting**: API rate limiting with Fastify
+- **CORS**: Configurable CORS policy
+- **JWT Authentication**: Token-based authentication
+- **Role-Based Access Control**: User roles and permissions
+- **Input Validation**: Request validation with class-validator
+- **Throttling**: Request throttling protection
+
+## 🐳 Docker
+
+### Services
+
+- **App**: NestJS application (port 3000)
+- **PostgreSQL**: Database (port 5432)
+- **Redis**: Cache and queue (port 6379)
+
+### Commands
+
+```bash
+# Start all services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop all services
+docker-compose down
+
+# Rebuild and start
+docker-compose up --build -d
+```
+
+## 📝 Development
+
+### Available Scripts
+
+```bash
+# Development
+npm run start:dev      # Start in watch mode
+npm run start:debug    # Start with debugger
+
+# Production
+npm run build          # Build the application
+npm run start:prod     # Start production server
+
+# Code Quality
+npm run lint           # Run ESLint
+npm run format         # Format code with Prettier
+
+# Testing
+npm run test           # Run unit tests
+npm run test:watch     # Run tests in watch mode
+npm run test:e2e       # Run E2E tests
+npm run test:cov       # Run tests with coverage
+```
+
+### Database Migrations
+
+The project uses TypeORM with `synchronize: true` for development. For production, you should:
+
+1. Disable synchronize
+2. Use migrations
+3. Set up proper database backup strategies
+
+## 🚀 Deployment
+
+### Production Considerations
+
+1. **Environment Variables**: Set proper production environment variables
+2. **Database**: Use production PostgreSQL instance
+3. **Redis**: Use production Redis instance
+4. **Security**: Change default secrets and passwords
+5. **SSL/TLS**: Enable HTTPS
+6. **Monitoring**: Set up application monitoring
+7. **Logging**: Configure proper logging
+
+### Docker Production Build
+
+```bash
+# Build production image
+docker build -t onboarding-nestjs:prod .
+
+# Run with production environment
+docker run -p 3000:3000 --env-file .env.prod onboarding-nestjs:prod
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure all tests pass
+6. Submit a pull request
+
+## 🔗 Applied Learning: DuoTime Project
+
+This onboarding project demonstrates the **learning process**. The concepts and practices learned here were directly applied to build a real production application:
+
+### **[DuoTime Backend](https://github.com/quangvinhlee/DuoTime/tree/main/apps/backend)**
+
+DuoTime is the **actual project** where I applied everything learned from this onboarding process:
+
+- **Advanced Authentication**: OAuth, social login, refresh tokens
+- **Complex Database Models**: User relationships, activity tracking, notifications
+- **Real-time Features**: WebSocket integration, live updates
+- **Advanced Security**: Rate limiting, encryption, audit logging
+- **Production Features**: Logging, monitoring, health checks
+- **Comprehensive Testing**: Full test coverage, integration tests
+- **CI/CD Pipeline**: Automated testing and deployment
+- **API Documentation**: GraphQL schema, OpenAPI specs
+- **Performance Optimization**: Caching, database optimization
+- **Mobile Integration**: Push notifications, mobile-specific APIs
+
+**Learning Path**: This onboarding project (practice) → DuoTime Backend (real application)
+
+## 📖 Learning Resources
+
+- [NestJS Official Documentation](https://docs.nestjs.com/)
+- [TypeORM Documentation](https://typeorm.io/)
+- [Fastify Documentation](https://www.fastify.io/docs/)
+- [BullMQ Documentation](https://docs.bullmq.io/)
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👨‍💻 Author
+
+This project was created as part of the NestJS onboarding process to demonstrate best practices and common patterns in NestJS development.
