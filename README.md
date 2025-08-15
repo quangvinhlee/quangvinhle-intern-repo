@@ -237,21 +237,29 @@ This repository serves as a comprehensive learning platform covering:
    cd quangvinhle-intern-repo
    ```
 
-2. **Explore projects**
-
-   - Start with `simple-react-app` for frontend testing
-   - Move to `onboarding-nestjs` for backend development
-   - Review documentation in `docs-*` folders
-
-3. **Run tests**
+2. **Setup React App (Frontend Testing)**
 
    ```bash
-   # React app tests
-   cd simple-react-app && npm test
-
-   # NestJS tests
-   cd onboarding-nestjs && npm test
+   cd simple-react-app
+   npm install
+   npm run dev          # Start development server
+   npm test             # Run tests
    ```
+
+3. **Setup NestJS App (Backend Learning)**
+
+   ```bash
+   cd onboarding-nestjs
+   npm install
+   docker-compose up -d # Start PostgreSQL and Redis
+   npm run start:dev    # Start development server
+   npm test             # Run tests
+   ```
+
+4. **Explore Documentation**
+
+   - Review documentation in `docs-*` folders
+   - Check API testing collections in `onboarding-api-bruno/`
 
 ## 📖 Contributing
 
